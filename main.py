@@ -19,7 +19,7 @@ for i in runs:
 				print(file)
 				import pdb; pdb.set_trace()
 				path_main = path+'/train/'+i+'/'+seq_name+'/'
-				mat = scipy.io.loadmat(path_main + file)
+				mat = scipy.io.loadmat(file)
 				video_path = path_main + mat['sequence']+'.mp4'
 				cap = cv2.VideoCapture(video_path)
 				success = 1
