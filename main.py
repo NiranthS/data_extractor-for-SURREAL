@@ -9,3 +9,5 @@ for i in runs:
 	print(i)
 	for j in listdir(path+'/train/'+i):
 		print(j)
+		for k in listdir(path+'/train/'+i+'/'+j):
+			print(k)
