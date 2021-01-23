@@ -15,7 +15,7 @@ for i in runs:
 		print(seq_name)
 		for k in listdir(path+'/train/'+i+'/'+seq_name):
 			print(k)
-			for file in glob.glob('*info.mat'):
+			for file in glob.glob(path+'/train/'+i+'/'+seq_name+'/'+'*info.mat'):
 				print(file)
 				import pdb; pdb.set_trace()
 				path_main = path+'/train/'+i+'/'+seq_name+'/'
