@@ -26,7 +26,7 @@ for i in runs:
 				count = 0 
 				while success: 
 					success, image = cap.read() 
-					cv2.imwrite("/home/niranth/Desktop/projects/datasets/surreal/images/"+mat['sequence']+'_'+str(count)+".jpg" % count, image)
+					cv2.imwrite("/home/niranth/Desktop/projects/datasets/surreal/images/"+mat['sequence'][0]+'_'+str(count)+".jpg" % count, image)
 					count += 1
 
 				break
