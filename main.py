@@ -17,6 +17,7 @@ for i in runs:
 			print(k)
 			for file in glob.glob('*info.mat'):
 				print(file)
+				import pdb; pdb.set_trace()
 				path_main = path+'/train/'+i+'/'+seq_name+'/'
 				mat = scipy.io.loadmat(path_main + file)
 				video_path = path_main + mat['sequence']+'.mp4'
