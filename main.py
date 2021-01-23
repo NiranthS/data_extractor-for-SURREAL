@@ -17,7 +17,7 @@ for i in runs:
 			print(k)
 			for file in glob.glob(path+'/train/'+i+'/'+seq_name+'/'+'*info.mat'):
 				print(file)
-				import pdb; pdb.set_trace()
+				# import pdb; pdb.set_trace()
 				path_main = path+'/train/'+i+'/'+seq_name+'/'
 				mat = scipy.io.loadmat(file)
 				video_path = path_main + mat['sequence'][0]+'.mp4'
@@ -26,6 +26,8 @@ for i in runs:
 				count = 0 
 				while success: 
 					success, image = cap.read() 
+					if success == 0:
+						break
 					cv2.imwrite("/home/niranth/Desktop/projects/datasets/surreal/images/"+mat['sequence'][0]+'_'+str(count)+".jpg" , image)
 					count += 1
 
