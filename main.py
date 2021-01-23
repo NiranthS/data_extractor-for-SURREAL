@@ -14,7 +14,9 @@ for i in runs:
 	for seq_name in listdir(path+'/train/'+i):
 		print(seq_name)
 		for k in listdir(path+'/train/'+i+'/'+seq_name):
+			print(k)
 			for file in glob.glob('*info.mat'):
+				print(file)
 				path_main = path+'/train/'+i+'/'+seq_name+'/'
 				mat = scipy.io.loadmat(path_main + file)
 				video_path = path_main + mat['sequence']+'.mp4'
