@@ -7,3 +7,5 @@ runs = listdir(path+'/train')
 
 for i in runs:
 	print(i)
+	for j in listdir(path+'/train/'+i):
+		print(j)
