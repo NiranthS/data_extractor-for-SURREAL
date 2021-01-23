@@ -20,19 +20,13 @@ for i in runs:
 				video_path = path_main + mat['sequence']+'.mp4'
 				cap = cv2.VideoCapture(video_path)
 				success = 1
-  				count = 0
-			    while success: 
-			  
-			        # vidObj object calls read 
-			        # function extract frames 
-			        success, image = cap.read() 
-			  
-			        # Saves the frames with frame-count 
-			        cv2.imwrite("/home/niranth/Desktop/projects/datasets/surreal/images/"+mat['sequence']+'_'+str(count)+".jpg" % count, image) 
-			  
-			        count += 1
+				count = 0 
+				while success: 
+					success, image = cap.read() 
+					cv2.imwrite("/home/niranth/Desktop/projects/datasets/surreal/images/"+mat['sequence']+'_'+str(count)+".jpg" % count, image)
+					count += 1
 
-			    break
+				break
 			break
 		break
 	break
