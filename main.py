@@ -59,7 +59,9 @@ for i in runs:
 
 				count += 1
 			main_count += count
-
+		import pickle
+		with open("/home/niranth/Desktop/projects/datasets/surreal/annotations_surreal.pickle", "wb") as fp:
+			pickle.dump(anno, fp)
 
 import json
 
