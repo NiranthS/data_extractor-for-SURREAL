@@ -26,7 +26,9 @@ for i in runs:
 				success = 1
 				count = 0
 				json_line = mat
-
+				del json_line['__globals__']
+				del json_line['__version__']
+				del json_line['__header__']
 				while success: 
 					success, image = cap.read() 
 					if success == 0:
@@ -47,9 +49,6 @@ for i in runs:
 					json_line['pose_parameters'] = json_line['pose'][:,count].tolist()
 					json_line['shape_parameters'] = json_line['shape'][:,count].tolist()
 					
-					del json_line['__globals__']
-					del json_line['__version__']
-					del json_line['__header__']
 
 					anno.append(json_line)
 
