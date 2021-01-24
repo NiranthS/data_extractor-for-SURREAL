@@ -46,9 +46,10 @@ for i in runs:
 					json_line['objpos'] = [160.0, 120.0]
 					json_line['pose_parameters'] = json_line['pose'][:,count].tolist()
 					json_line['shape_parameters'] = json_line['shape'][:,count].tolist()
-					# del json_line['__header__']
-					# del json_line['__version__']
-					# del json_line['__globals__']
+					
+					del json_line['__globals__']
+					del json_line['__version__']
+					del json_line['__header__']
 
 					anno.append(json_line)
 
@@ -65,9 +66,9 @@ import json
 # 	json.dump(anno,f)
 # scipy.io.savemat("/home/niranth/Desktop/projects/datasets/surreal/annotations_surreal.mat", mdic)
 
-import pickle
-with open("/home/niranth/Desktop/projects/datasets/surreal/annotations_surreal.txt", "wb") as fp:
-	pickle.dump(anno, fp)
+# import pickle
+# with open("/home/niranth/Desktop/projects/datasets/surreal/annotations_surreal.txt", "wb") as fp:
+# 	pickle.dump(anno, fp)
 			# cap = cv2.VideoCapture(0)
 
 			# fourcc = cv2.VideoWriter_fourcc(*'XVID')
