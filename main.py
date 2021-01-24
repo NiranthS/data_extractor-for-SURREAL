@@ -63,7 +63,11 @@ import json
 
 # with open('/home/niranth/Desktop/projects/datasets/surreal/annotations_surreal.json', 'w') as f:
 # 	json.dump(anno,f)
-scipy.io.savemat("/home/niranth/Desktop/projects/datasets/surreal/annotations_surreal.mat", mdic)
+# scipy.io.savemat("/home/niranth/Desktop/projects/datasets/surreal/annotations_surreal.mat", mdic)
+
+import pickle
+with open("/home/niranth/Desktop/projects/datasets/surreal/annotations_surreal.txt", "wb") as fp:
+	pickle.dump(anno, fp)
 			# cap = cv2.VideoCapture(0)
 
 			# fourcc = cv2.VideoWriter_fourcc(*'XVID')
