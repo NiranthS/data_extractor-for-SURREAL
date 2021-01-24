@@ -37,6 +37,8 @@ for i in runs:
 				cv2.imwrite("/home/niranth/Desktop/projects/datasets/surreal/images/"+i+'_'+mat['sequence'][0]+'_'+str(count)+".jpg" , image)
 				json_line['img_paths'] = i+'_'+mat['sequence'][0]+'_'+str(count)+".jpg"
 				json_line['self_joints'] = []
+				if len(json_line['joints2D'].shape) < 3:
+					import pdb; pdb.set_trace()
 				for jt in range(24):
 					json_line['self_joints'].append([json_line['joints2D'][0, jt, count], json_line['joints2D'][1, jt, count], 1.0])
 				json_line['isValidation'] = 0.0
