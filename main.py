@@ -61,8 +61,8 @@ for i in runs:
 
 import json
 
-# with open('/home/niranth/Desktop/projects/datasets/surreal/annotations_surreal.json', 'w') as f:
-# 	json.dump(anno,f)
+with open('/home/niranth/Desktop/projects/datasets/surreal/annotations_surreal.json', 'w') as f:
+	json.dump(anno,f)
 # scipy.io.savemat("/home/niranth/Desktop/projects/datasets/surreal/annotations_surreal.mat", mdic)
 
 # import pickle
