@@ -46,9 +46,9 @@ for i in runs:
 					json_line['objpos'] = [160.0, 120.0]
 					json_line['pose_parameters'] = json_line['pose'][:,count].tolist()
 					json_line['shape_parameters'] = json_line['shape'][:,count].tolist()
-					del json_line['__header__']
-					del json_line['__version__']
-					del json_line['__globals__']
+					# del json_line['__header__']
+					# del json_line['__version__']
+					# del json_line['__globals__']
 
 					anno.append(json_line)
 
@@ -61,8 +61,9 @@ for i in runs:
 
 import json
 
-with open('/home/niranth/Desktop/projects/datasets/surreal/annotations_surreal.json', 'w') as f:
-	json.dump(anno,f)
+# with open('/home/niranth/Desktop/projects/datasets/surreal/annotations_surreal.json', 'w') as f:
+# 	json.dump(anno,f)
+scipy.io.savemat("/home/niranth/Desktop/projects/datasets/surreal/annotations_surreal.mat", mdic)
 			# cap = cv2.VideoCapture(0)
 
 			# fourcc = cv2.VideoWriter_fourcc(*'XVID')
