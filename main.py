@@ -66,7 +66,10 @@ for i in runs:
 			cap = cv2.VideoCapture(video_path)
 			success = 1
 			count = 0
-			
+			del mat['__globals__']
+			del mat['__version__']
+			del mat['__header__']
+
 			while success: 
 				success, image = cap.read() 
 				if success == 0:
@@ -74,10 +77,7 @@ for i in runs:
 				if count<3 or count % 20 == 0:
 					cv2.imwrite("/home/niranth/Desktop/projects/datasets/surreal/images2/"+i+'_'+mat['sequence'][0]+'_'+str(count)+".jpg" , image)
 					json_line = mat
-					del json_line['__globals__']
-					del json_line['__version__']
-					del json_line['__header__']
-					json_line['img_paths'] = i+'_'+mat['sequence'][0]+'_'+str(count)+".jpg"
+										json_line['img_paths'] = i+'_'+mat['sequence'][0]+'_'+str(count)+".jpg"
 					json_line['self_joints'] = []
 
 					for jt in range(24):
