@@ -71,7 +71,7 @@ for i in runs:
 				if success == 0:
 					break
 				if count<3 or count % 20 == 0:
-					cv2.imwrite("/home/niranth/Desktop/projects/datasets/surreal/images/"+i+'_'+mat['sequence'][0]+'_'+str(count)+".jpg" , image)
+					cv2.imwrite("/home/niranth/Desktop/projects/datasets/surreal/images2/"+i+'_'+mat['sequence'][0]+'_'+str(count)+".jpg" , image)
 					json_line['img_paths'] = i+'_'+mat['sequence'][0]+'_'+str(count)+".jpg"
 					json_line['self_joints'] = []
 
@@ -100,18 +100,18 @@ for i in runs:
 
 	print('saving...')
 	import pickle
-	with open("/home/niranth/Desktop/projects/datasets/surreal/annotations_surreal.pickle", "wb") as fp:
+	with open("/home/niranth/Desktop/projects/datasets/surreal/annotations_surreal2.pickle", "wb") as fp:
 		pickle.dump(anno, fp)
 
-import json
-
+# import json
+# 
 # with open('/home/niranth/Desktop/projects/datasets/surreal/annotations_surreal.json', 'w') as f:
 # 	json.dump(anno,f)
 # scipy.io.savemat("/home/niranth/Desktop/projects/datasets/surreal/annotations_surreal.mat", mdic)
 
-import pickle
-with open("/home/niranth/Desktop/projects/datasets/surreal/annotations_surreal.pickle", "wb") as fp:
-	pickle.dump(anno, fp)
+# import pickle
+# with open("/home/niranth/Desktop/projects/datasets/surreal/annotations_surreal2.pickle", "wb") as fp:
+# 	pickle.dump(anno, fp)
 			# cap = cv2.VideoCapture(0)
 
 			# fourcc = cv2.VideoWriter_fourcc(*'XVID')
