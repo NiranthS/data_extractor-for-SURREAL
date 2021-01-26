@@ -105,13 +105,17 @@ for i in runs:
 					json_line['light'] = json_line['light'].tolist()
 					json_line['stride'] = json_line['stride'].tolist()
 					json_line['camDist'] = json_line['camDist'].tolist()
-					json_line['camLoc'] = json_line['canLoc'].tolist()
+					json_line['camLoc'] = json_line['camLoc'].tolist()
 					json_line['joints2D'] = json_line['joints2D'].tolist()
 					json_line['joints3D'] = json_line['joints3D'].tolist()
 					json_line['pose'] = json_line['pose'].tolist()
 					json_line['zrot'] = json_line['zrot'].tolist()
 					json_line['cloth'] = json_line['cloth'].tolist()
 					json_line['shape'] = json_line['shape'].tolist()
+					json_line['img_paths'] = list(json_line['img_paths'])
+
+					for key in json_line.keys():
+						print(type(json_line[key]), key )
 
 				count += 1
 			main_count += count
