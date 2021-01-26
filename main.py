@@ -10,12 +10,13 @@ import scipy.io
 runs = listdir(path+'/train')
 main_count = 0
 anno = []
-import pdb; pdb.set_trace()
+# import pdb; pdb.set_trace()
 for i in runs:
 	# print(i)
 	for seq_name in listdir(path+'/train/'+i):
 		print(i)
 		print(seq_name)
+		import pdb; pdb.set_trace()
 		# for k in listdir(path+'/train/'+i+'/'+seq_name):
 		# 	# print(k)
 		for file in glob.glob(path+'/train/'+i+'/'+seq_name+'/'+'*info.mat'):
