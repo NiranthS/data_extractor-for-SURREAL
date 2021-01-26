@@ -77,7 +77,7 @@ for i in runs:
 				if count<3 or count % 20 == 0:
 					cv2.imwrite("/home/niranth/Desktop/projects/datasets/surreal/images2/"+i+'_'+mat['sequence'][0]+'_'+str(count)+".jpg" , image)
 					json_line = mat
-										json_line['img_paths'] = i+'_'+mat['sequence'][0]+'_'+str(count)+".jpg"
+					json_line['img_paths'] = i+'_'+mat['sequence'][0]+'_'+str(count)+".jpg"
 					json_line['self_joints'] = []
 
 					for jt in range(24):
