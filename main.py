@@ -93,8 +93,11 @@ for i in runs:
 					json_line['shape_parameters'] = json_line['shape'][:,count].tolist()
 					for key in json_line.keys():
 						print(type(json_line[key]), key )
+						if key == 'shape':
+							break
 
 					anno.append(json_line)
+					json_line['sequence'] = 
 
 				count += 1
 			main_count += count
