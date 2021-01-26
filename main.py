@@ -94,7 +94,8 @@ for i in runs:
 
 				count += 1
 			main_count += count
-			print((main_count*100)/5342090)
+			# print((main_count*100)/5342090)
+		print((main_count*100)/5342090)
 		print('saving...')
 		import pickle
 		with open("/home/niranth/Desktop/projects/datasets/surreal/annotations_surreal.pickle", "wb") as fp:
