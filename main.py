@@ -53,6 +53,7 @@ for i in runs:
 		print(seq_name)
 		# for k in listdir(path+'/train/'+i+'/'+seq_name):
 		# 	# print(k)
+		file_num+=1
 		for file in glob.glob(path+'/train/'+i+'/'+seq_name+'/'+'*info.mat'):
 			# print(file)
 			# import pdb; pdb.set_trace()
@@ -97,11 +98,12 @@ for i in runs:
 			main_count += count
 			# print((main_count*100)/5342090)
 		print((main_count*100)/5342090)
-
-	print('saving...')
-	import pickle
-	with open("/home/niranth/Desktop/projects/datasets/surreal/annotations_surreal2.pickle", "wb") as fp:
-		pickle.dump(anno, fp)
+		if file_num%20 == 0:
+			print('saving...')
+			import pickle
+			with open("/home/niranth/Desktop/projects/datasets/surreal/annotations_surreal2.pickle", "wb") as fp:
+				pickle.dump(anno, fp)
+			file_num=0
 
 # import json
 # 
