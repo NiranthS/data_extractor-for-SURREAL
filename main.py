@@ -8,6 +8,8 @@ import cv2
 import glob
 import scipy.io
 import pickle
+
+import json
 runs = listdir(path+'/train')
 main_count = 0
 anno = []
@@ -121,11 +123,11 @@ for i in runs:
 			main_count += count
 			# print((main_count*100)/5342090)
 		print((main_count*100)/5342090)
-		if file_num%120 == 0:
+		if file_num%20 == 0:
 			print('saving...')
 			
-			with open("/home/niranth/Desktop/projects/datasets/surreal/annotations_surreal2.pickle", "wb") as fp:
-				pickle.dump(anno, fp)
+			with open("/home/niranth/Desktop/projects/datasets/surreal/annotations_surreal2.json", "w") as fp:
+				json.dump(anno, fp)
 			file_num=0
 	print('run end saving...')
 			
