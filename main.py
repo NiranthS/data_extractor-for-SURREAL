@@ -97,7 +97,7 @@ for i in runs:
 							break
 
 					anno.append(json_line)
-					json_line['sequence'] = 
+					# json_line['sequence'] = 
 
 				count += 1
 			main_count += count
