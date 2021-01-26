@@ -36,7 +36,7 @@ for i in runs:
 				if success == 0:
 					break
 
-				main_count + =1
+				main_count += 1
 				print(main_count)
 
 				# count += 1
