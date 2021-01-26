@@ -10,29 +10,29 @@ import scipy.io
 runs = listdir(path+'/train')
 main_count = 0
 anno = []
-# import pdb; pdb.set_trace()
+
 for i in runs:
 	# print(i)
+	import pdb; pdb.set_trace()
 	for seq_name in listdir(path+'/train/'+i):
-		print(i)
-		print(seq_name)
-		import pdb; pdb.set_trace()
+		
+		# import pdb; pdb.set_trace()
 		# for k in listdir(path+'/train/'+i+'/'+seq_name):
 		# 	# print(k)
 		for file in glob.glob(path+'/train/'+i+'/'+seq_name+'/'+'*info.mat'):
 			# print(file)
 			# import pdb; pdb.set_trace()
 			path_main = path+'/train/'+i+'/'+seq_name+'/'
-			mat = scipy.io.loadmat(file)
+			# mat = scipy.io.loadmat(file)
 			video_path = path_main + mat['sequence'][0]+'.mp4'
 			cap = cv2.VideoCapture(video_path)
 			success = 1
 			count = 0
-			json_line = mat
-			del json_line['__globals__']
-			del json_line['__version__']
-			del json_line['__header__']
-			while success: 
+			# json_line = mat
+			# del json_line['__globals__']
+			# del json_line['__version__']
+			# del json_line['__header__']
+			# while success: 
 				success, image = cap.read() 
 				if success == 0:
 					break
