@@ -92,7 +92,7 @@ for i in runs:
 					json_line['pose_parameters'] = json_line['pose'][:,count].tolist()
 					json_line['shape_parameters'] = json_line['shape'][:,count].tolist()
 					for key in json_line.keys():
-						print(type(json_line[key]))
+						print(type(json_line[key]) == 'numpy.ndarray')
 
 					anno.append(json_line)
 
