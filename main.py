@@ -16,7 +16,7 @@ anno = []
 
 # for i in runs:
 # 	# print(i)
-import pdb; pdb.set_trace()
+# import pdb; pdb.set_trace()
 # 	for seq_name in listdir(path+'/train/'+i):
 		
 # 		# import pdb; pdb.set_trace()
@@ -117,8 +117,8 @@ for i in runs:
 					json_line['shape'] = json_line['shape'].tolist()
 					json_line['img_paths'] = list(json_line['img_paths'])
 
-					for key in json_line.keys():
-						print(type(json_line[key]), key )
+					# for key in json_line.keys():
+					# 	print(type(json_line[key]), key )
 
 				count += 1
 			main_count += count
