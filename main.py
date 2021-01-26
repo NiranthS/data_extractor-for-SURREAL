@@ -14,7 +14,7 @@ anno = []
 
 # for i in runs:
 # 	# print(i)
-# 	import pdb; pdb.set_trace()
+import pdb; pdb.set_trace()
 # 	for seq_name in listdir(path+'/train/'+i):
 		
 # 		# import pdb; pdb.set_trace()
