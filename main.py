@@ -94,8 +94,8 @@ for i in runs:
 					json_line['objpos'] = [160.0, 120.0]
 					json_line['pose_parameters'] = json_line['pose'][:,count].tolist()
 					json_line['shape_parameters'] = json_line['shape'][:,count].tolist()
-					for key in json_line.keys():
-						print(type(json_line[key]), key )
+					# for key in json_line.keys():
+					# 	print(type(json_line[key]), key )
 						# if key == 'shape':
 						# 	break
 
@@ -123,6 +123,8 @@ for i in runs:
 				count += 1
 			main_count += count
 			# print((main_count*100)/5342090)
+		for key in anno[0]:
+			print(type(anno[0][key]), 'final')
 		print((main_count*100)/5342090)
 		if file_num%20 == 0:
 			print('saving...')
