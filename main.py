@@ -32,7 +32,7 @@ for i in runs:
 			# del json_line['__globals__']
 			# del json_line['__version__']
 			# del json_line['__header__']
-			# while success: 
+			while success: 
 				success, image = cap.read() 
 				if success == 0:
 					break
