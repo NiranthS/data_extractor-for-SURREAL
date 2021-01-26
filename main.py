@@ -45,6 +45,7 @@ anno = []
 		# import pickle
 		# with open("/home/niranth/Desktop/projects/datasets/surreal/annotations_surreal.pickle", "wb") as fp:
 		# 	pickle.dump(anno, fp)
+file_num = 0
 for i in runs:
 	print(i)
 	for seq_name in listdir(path+'/train/'+i):
@@ -96,10 +97,11 @@ for i in runs:
 			main_count += count
 			# print((main_count*100)/5342090)
 		print((main_count*100)/5342090)
-		print('saving...')
-		import pickle
-		with open("/home/niranth/Desktop/projects/datasets/surreal/annotations_surreal.pickle", "wb") as fp:
-			pickle.dump(anno, fp)
+
+	print('saving...')
+	import pickle
+	with open("/home/niranth/Desktop/projects/datasets/surreal/annotations_surreal.pickle", "wb") as fp:
+		pickle.dump(anno, fp)
 
 import json
 
