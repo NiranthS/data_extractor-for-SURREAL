@@ -122,7 +122,7 @@ for i in runs:
 
 					img_count += 1
 
-				else if success == 0:
+				if success == 0:
 					cv2.imwrite("/home/niranth/Desktop/projects/datasets/surreal/images2/"+i+'_'+mat['sequence'][0]+'_'+str(count)+".jpg" , img_copy)
 					json_line = mat.copy()
 					json_line['img_paths'] = i+'_'+mat['sequence'][0]+'_'+str(count)+".jpg"
