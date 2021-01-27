@@ -178,16 +178,16 @@ for i in runs:
 
 		print((main_count*100)/5342090)
 		if file_num%20 == 0:
-			print(image_count)
+			print(img_count)
 			print('saving...')
 			
-			with open("/home/niranth/Desktop/projects/datasets/surreal/annotations_surreal2.json", "w") as fp:
-				json.dump(anno, fp)
+			with open("/home/niranth/Desktop/projects/datasets/surreal/annotations_surreal2.pickle", "wb") as fp:
+				pickle.dump(anno, fp)
 			file_num=0
 	print('run end saving...')
 			
-	with open("/home/niranth/Desktop/projects/datasets/surreal/annotations_surreal2.json", "w") as fp:
-		json.dump(anno, fp)
+	with open("/home/niranth/Desktop/projects/datasets/surreal/annotations_surreal2.pickle", "wb") as fp:
+		pickle.dump(anno, fp)
 	file_num=0
 # import json
 # 
