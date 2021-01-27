@@ -49,6 +49,7 @@ anno = []
 		# with open("/home/niranth/Desktop/projects/datasets/surreal/annotations_surreal.pickle", "wb") as fp:
 		# 	pickle.dump(anno, fp)
 file_num = 0
+img_count = 0
 for i in runs:
 	print(i)
 	for seq_name in listdir(path+'/train/'+i):
@@ -74,7 +75,7 @@ for i in runs:
 				success, image = cap.read() 
 				if success == 0:
 					break
-				if count<3 or count % 20 == 0:
+				if count<2:
 					cv2.imwrite("/home/niranth/Desktop/projects/datasets/surreal/images2/"+i+'_'+mat['sequence'][0]+'_'+str(count)+".jpg" , image)
 					json_line = mat.copy()
 					json_line['img_paths'] = i+'_'+mat['sequence'][0]+'_'+str(count)+".jpg"
@@ -119,9 +120,12 @@ for i in runs:
 
 					# for key in json_line.keys():
 					# 	print(type(json_line[key]), key )
+					image_count += 1
+				else:
+					break
 
-				count += 1
-			main_count += count
+			# 	count += 1
+			# main_count += count
 			# print((main_count*100)/5342090)
 		import pdb; pdb.set_trace()
 		for key in anno[0]:
@@ -129,6 +133,7 @@ for i in runs:
 
 		print((main_count*100)/5342090)
 		if file_num%20 == 0:
+			print(image_count)
 			print('saving...')
 			
 			with open("/home/niranth/Desktop/projects/datasets/surreal/annotations_surreal2.json", "w") as fp:
