@@ -183,12 +183,12 @@ for i in runs:
 			print(img_count)
 			print('saving...')
 			
-			with open("/home/niranth/Desktop/projects/datasets/surreal/annotations_surreal2.json", "wb") as fp:
+			with open("/home/niranth/Desktop/projects/datasets/surreal/annotations_surreal2.json", "w") as fp:
 				json.dump(anno, fp)
 			file_num=0
 	print('run end saving...')
 			
-	with open("/home/niranth/Desktop/projects/datasets/surreal/annotations_surreal2.json", "wb") as fp:
+	with open("/home/niranth/Desktop/projects/datasets/surreal/annotations_surreal2.json", "w") as fp:
 		json.dump(anno, fp)
 	file_num=0
 # import json
