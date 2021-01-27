@@ -73,8 +73,7 @@ for i in runs:
 
 			while success: 
 				success, image = cap.read() 
-				if success == 0:
-					break
+				
 				if count<2:
 					cv2.imwrite("/home/niranth/Desktop/projects/datasets/surreal/images2/"+i+'_'+mat['sequence'][0]+'_'+str(count)+".jpg" , image)
 					json_line = mat.copy()
@@ -120,16 +119,61 @@ for i in runs:
 
 					# for key in json_line.keys():
 					# 	print(type(json_line[key]), key )
-					img_count += 1
-				else:
-					break
 
-			# 	count += 1
-			# main_count += count
-			# print((main_count*100)/5342090)
-		# import pdb; pdb.set_trace()
-		for key in anno[0]:
-			print(type(anno[0][key]), 'final')
+					img_count += 1
+
+				else if success == 0:
+					cv2.imwrite("/home/niranth/Desktop/projects/datasets/surreal/images2/"+i+'_'+mat['sequence'][0]+'_'+str(count)+".jpg" , img_copy)
+					json_line = mat.copy()
+					json_line['img_paths'] = i+'_'+mat['sequence'][0]+'_'+str(count)+".jpg"
+					json_line['self_joints'] = []
+					# pdb.set_trace()
+					for jt in range(24):
+						if len(json_line['joints2D'].shape) < 3:
+							json_line['self_joints'].append([json_line['joints2D'][0, jt], json_line['joints2D'][1, jt], 1.0])
+						else:
+							json_line['self_joints'].append([json_line['joints2D'][0, jt, count], json_line['joints2D'][1, jt, count], 1.0])
+					json_line['isValidation'] = 0.0
+					json_line['numOtherPeople'] = 0.0
+					json_line['people_index'] = 0.0
+					json_line['img_width'] = 320.0
+					json_line['img_height'] = 240.0
+					json_line['scale_provided'] = 0.9
+					json_line['objpos'] = [160.0, 120.0]
+					json_line['pose_parameters'] = json_line['pose'][:,count].tolist()
+					json_line['shape_parameters'] = json_line['shape'][:,count].tolist()
+					# for key in json_line.keys():
+					# 	print(type(json_line[key]), key )
+						# if key == 'shape':
+						# 	break
+
+					anno.append(json_line)
+					json_line['sequence'] = json_line['sequence'].tolist()
+					json_line['clipNo'] = json_line['clipNo'].tolist()
+					json_line['source'] = json_line['source'].tolist()
+					json_line['bg'] = json_line['bg'].tolist()
+					json_line['gender'] = json_line['gender'].tolist()
+					json_line['light'] = json_line['light'].tolist()
+					json_line['stride'] = json_line['stride'].tolist()
+					json_line['camDist'] = json_line['camDist'].tolist()
+					json_line['camLoc'] = json_line['camLoc'].tolist()
+					json_line['joints2D'] = json_line['joints2D'].tolist()
+					json_line['joints3D'] = json_line['joints3D'].tolist()
+					json_line['pose'] = json_line['pose'].tolist()
+					json_line['zrot'] = json_line['zrot'].tolist()
+					json_line['cloth'] = json_line['cloth'].tolist()
+					json_line['shape'] = json_line['shape'].tolist()
+					json_line['img_paths'] = list(json_line['img_paths'])
+
+
+					break
+				img_copy = image
+				count += 1
+			main_count += count
+			print((main_count*100)/5342090)
+		# # import pdb; pdb.set_trace()
+		# for key in anno[0]:
+		# 	print(type(anno[0][key]), 'final')
 
 		print((main_count*100)/5342090)
 		if file_num%20 == 0:
