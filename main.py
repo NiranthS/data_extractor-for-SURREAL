@@ -127,7 +127,7 @@ for i in runs:
 			# 	count += 1
 			# main_count += count
 			# print((main_count*100)/5342090)
-		import pdb; pdb.set_trace()
+		# import pdb; pdb.set_trace()
 		for key in anno[0]:
 			print(type(anno[0][key]), 'final')
 
