@@ -120,7 +120,7 @@ for i in runs:
 
 					# for key in json_line.keys():
 					# 	print(type(json_line[key]), key )
-					image_count += 1
+					img_count += 1
 				else:
 					break
 
