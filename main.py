@@ -204,8 +204,8 @@ for i in runs:
 			file_num=0
 	print('run end saving...')
 			
-	# with open("/home/niranth/Desktop/projects/datasets/surreal/annotations_surreal2.pickle", "wb") as fp:
-	# 	pickle.dump(anno, fp)
+	with open("/home/niranth/Desktop/projects/datasets/surreal/annotations_surreal_end.pickle", "wb") as fp:
+		pickle.dump(anno, fp)
 	file_num=0
 # import json
 # 
