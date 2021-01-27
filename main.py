@@ -99,7 +99,7 @@ for i in runs:
 						# if key == 'shape':
 						# 	break
 
-					anno.append(json_line)
+					
 					json_line['sequence'] = json_line['sequence'].tolist()
 					json_line['clipNo'] = json_line['clipNo'].tolist()
 					json_line['source'] = json_line['source'].tolist()
@@ -116,6 +116,8 @@ for i in runs:
 					json_line['cloth'] = json_line['cloth'].tolist()
 					json_line['shape'] = json_line['shape'].tolist()
 					json_line['img_paths'] = list(json_line['img_paths'])
+
+					anno.append(json_line)
 
 					# for key in json_line.keys():
 					# 	print(type(json_line[key]), key )
@@ -148,7 +150,7 @@ for i in runs:
 						# if key == 'shape':
 						# 	break
 
-					anno.append(json_line)
+					
 					json_line['sequence'] = json_line['sequence'].tolist()
 					json_line['clipNo'] = json_line['clipNo'].tolist()
 					json_line['source'] = json_line['source'].tolist()
@@ -166,7 +168,7 @@ for i in runs:
 					json_line['shape'] = json_line['shape'].tolist()
 					json_line['img_paths'] = list(json_line['img_paths'])
 
-
+					anno.append(json_line)
 					break
 				img_copy = image
 				count += 1
@@ -181,13 +183,13 @@ for i in runs:
 			print(img_count)
 			print('saving...')
 			
-			with open("/home/niranth/Desktop/projects/datasets/surreal/annotations_surreal2.pickle", "wb") as fp:
-				pickle.dump(anno, fp)
+			with open("/home/niranth/Desktop/projects/datasets/surreal/annotations_surreal2.json", "wb") as fp:
+				json.dump(anno, fp)
 			file_num=0
 	print('run end saving...')
 			
-	with open("/home/niranth/Desktop/projects/datasets/surreal/annotations_surreal2.pickle", "wb") as fp:
-		pickle.dump(anno, fp)
+	with open("/home/niranth/Desktop/projects/datasets/surreal/annotations_surreal2.json", "wb") as fp:
+		json.dump(anno, fp)
 	file_num=0
 # import json
 # 
