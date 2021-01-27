@@ -74,7 +74,7 @@ for i in runs:
 			while success: 
 				success, image = cap.read() 
 				
-				if count<2:
+				if count<1:
 					cv2.imwrite("/home/niranth/Desktop/projects/datasets/surreal/images2/"+i+'_'+mat['sequence'][0]+'_'+str(count)+".jpg" , image)
 					json_line = mat.copy()
 					json_line['img_paths'] = i+'_'+mat['sequence'][0]+'_'+str(count)+".jpg"
