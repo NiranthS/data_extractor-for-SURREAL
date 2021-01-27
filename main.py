@@ -154,20 +154,28 @@ for i in runs:
 					json_line['sequence'] = json_line['sequence'].tolist()
 					json_line['clipNo'] = json_line['clipNo'].tolist()
 					json_line['source'] = json_line['source'].tolist()
-					json_line['bg'] = json_line['bg'].tolist()
+					# json_line['bg'] = json_line['bg'].tolist()
 					json_line['gender'] = json_line['gender'].tolist()
-					json_line['light'] = json_line['light'].tolist()
-					json_line['stride'] = json_line['stride'].tolist()
+					# json_line['light'] = json_line['light'].tolist()
+					# json_line['stride'] = json_line['stride'].tolist()
 					json_line['camDist'] = json_line['camDist'].tolist()
 					json_line['camLoc'] = json_line['camLoc'].tolist()
-					json_line['joints2D'] = json_line['joints2D'].tolist()
-					json_line['joints3D'] = json_line['joints3D'].tolist()
-					json_line['pose'] = json_line['pose'].tolist()
+					# json_line['joints2D'] = json_line['joints2D'].tolist()
+					# json_line['joints3D'] = json_line['joints3D'].tolist()
+					# json_line['pose'] = json_line['pose'].tolist()
 					json_line['zrot'] = json_line['zrot'].tolist()
 					json_line['cloth'] = json_line['cloth'].tolist()
-					json_line['shape'] = json_line['shape'].tolist()
+					# json_line['shape'] = json_line['shape'].tolist()
 					json_line['img_paths'] = list(json_line['img_paths'])
 
+					del json_line['bg']
+					del json_line['light']
+					del json_line['stride']
+					del json_line['joints2D']
+					del json_line['joints3D']
+					del json_line['pose']
+					del json_line['shape']
+					# del json_line[]
 					anno.append(json_line)
 					break
 				img_copy = image
@@ -183,13 +191,13 @@ for i in runs:
 			print(img_count)
 			print('saving...')
 			
-			with open("/home/niranth/Desktop/projects/datasets/surreal/annotations_surreal2.json", "w") as fp:
-				json.dump(anno, fp)
+			with open("/home/niranth/Desktop/projects/datasets/surreal/annotations_surreal2.pickle", "wb") as fp:
+				pickle.dump(anno, fp)
 			file_num=0
 	print('run end saving...')
 			
-	with open("/home/niranth/Desktop/projects/datasets/surreal/annotations_surreal2.json", "w") as fp:
-		json.dump(anno, fp)
+	with open("/home/niranth/Desktop/projects/datasets/surreal/annotations_surreal2.pickle", "wb") as fp:
+		pickle.dump(anno, fp)
 	file_num=0
 # import json
 # 
